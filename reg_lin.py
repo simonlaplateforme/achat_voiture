@@ -40,3 +40,18 @@ plt.title("regression linéaire sklearn")
 plt.scatter(Year, Selling_Price)
 plt.plot(Year, reg_sk)
 plt.show()
+
+# sklearn multiple:
+Kms_Driven = car_data["Kms_Driven"]
+Transmission = car_data["Transmission"]
+
+# Transformation des données sous un format plotable
+for i in range(len(Transmission)):
+    if Transmission[i] == "Manual":
+        Transmission[i] = 0
+    else:
+        Transmission[i] = 1
+
+data_sk = [[Year[i], Kms_Driven[i], Transmission[i]] for i in range(len(Year))]
+reg_sk_mul = LinearRegression().fit(data_sk, Selling_Price)
+print(reg_sk_mul.score(data_sk, Selling_Price))
