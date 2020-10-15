@@ -29,3 +29,4 @@ plt.figure(3)
 plt.title("kilometrage moyen")
 plt.hist(car_data.loc[:, 'Kms_Driven'])
 plt.show()
+
