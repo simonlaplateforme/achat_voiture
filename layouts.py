@@ -36,6 +36,7 @@ def figure(year):
     fig = {
         'data': [
             go.Scatter(
+                name="Données de l'année {}" . format(year),
                 x=x_reg,
                 y=car_data[car_data.Year == year]["Selling_Price"],
                 mode='markers',
@@ -46,6 +47,7 @@ def figure(year):
                 },
             ),
             go.Scatter(
+                name="regression linéaire",
                 x=x_reg,
                 y=y_reg,
                 mode="lines+markers",
