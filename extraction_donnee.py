@@ -1,5 +1,6 @@
 import pandas as pd
 import matplotlib.pyplot as plt
+import seaborn as sns
 
 car_data = pd.read_csv('carData.csv')
 
@@ -30,3 +31,5 @@ plt.title("kilometrage moyen")
 plt.hist(car_data.loc[:, 'Kms_Driven'])
 plt.show()
 
+sns.catplot(x='Year', y='Selling_Price', data=car_data, hue='Fuel_Type')
+plt.show()
